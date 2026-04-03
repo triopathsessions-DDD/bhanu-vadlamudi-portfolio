@@ -1,0 +1,80 @@
+/* ============================================================
+   BHANU VADLAMUDI PORTFOLIO — effects.css  (minimal edition)
+   ============================================================ */
+
+/* ── Scroll Progress Bar ───────────────────────────────────── */
+#scroll-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--royal-blue), var(--light-azure));
+  z-index: 9999;
+  transition: width .1s linear;
+}
+
+/* ── Page Fade Veil ────────────────────────────────────────── */
+#page-veil {
+  position: fixed;
+  inset: 0;
+  background: var(--dark-navy);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 9998;
+  transition: opacity .28s ease;
+}
+
+/* ── Hero Canvas ───────────────────────────────────────────── */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Typewriter Caret ──────────────────────────────────────── */
+.typewriter::after {
+  content: '|';
+  color: var(--light-azure);
+  animation: caret .8s step-end infinite;
+  margin-left: 1px;
+}
+@keyframes caret { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ── Timeline dot subtle pulse ─────────────────────────────── */
+.tl-dot {
+  animation: dotPulse 2.5s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%,100%{ box-shadow: 0 0 0 3px var(--light-azure); }
+  50%    { box-shadow: 0 0 0 6px rgba(91,155,213,.2); }
+}
+
+/* ── Hero entrance animations ──────────────────────────────── */
+/* Text slides in from the left */
+.hero-text {
+  animation: heroTextIn .75s ease .2s both;
+}
+@keyframes heroTextIn {
+  from { opacity: 0; transform: translateX(-36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Avatar slides in from the right */
+.avatar-wrap {
+  animation: heroAvatarIn .75s ease .35s both;
+}
+@keyframes heroAvatarIn {
+  from { opacity: 0; transform: translateX(36px) scale(.96); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* ── Footer download button gentle glow ───────────────────── */
+.footer-dl .btn-primary {
+  animation: dlGlow 3s ease-in-out infinite;
+}
+@keyframes dlGlow {
+  0%,100%{ box-shadow: 0 4px 16px rgba(26,58,143,.4); }
+  50%    { box-shadow: 0 4px 24px rgba(91,155,213,.45); }
+}

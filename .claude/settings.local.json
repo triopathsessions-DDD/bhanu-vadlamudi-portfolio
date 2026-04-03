@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/KANNA/Downloads/**)",
+      "Bash(python -c \":*)",
+      "Bash(pip install:*)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\KANNA\\\\Downloads'' -Include *.jpg,*.jpeg,*.png,*.webp -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 10 FullName,LastWriteTime\")",
+      "Bash(powershell -Command \":*)",
+      "Bash(npx netlify-cli:*)"
+    ]
+  }
+}
